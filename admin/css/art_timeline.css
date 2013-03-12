@@ -1,0 +1,21 @@
+.LV_validation_message {
+	font-weight: bold;
+	margin-left: 3px;
+}
+
+.LV_valid {
+	color: #0000FF;
+}
+
+.LV_invalid {
+	color: #FF0000;
+}
+
+fieldset label {
+  clear: none !important;
+}
+
+fieldset.adminform label {
+  width: auto !important;
+  margin-right: 10px !important;
+}

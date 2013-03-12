@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Art Timeline">
+		<message>
+			<![CDATA[Art Timeline]]>
+		</message>
+	</layout>
+	<state>
+		<name>Art Timeline</name>
+		<description>Art Timeline</description>
+        <url>
+        </url>
+		<params>
+      <param name="timeline" type="sql" default="" label="Timeline" description="Select timeline" query="SELECT name as timeline, id as value from #__art_tl_timeline WHERE published = 1"/>
+    </params>
+		<advanced>
+
+		</advanced>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="timeline" type="sql" default="" label="Timeline" description="Select timeline" query="SELECT name as timeline, id as value from #__art_tl_timeline WHERE published = 1"/>
+      </fieldset>
+    </fields>
+	</state>
+</metadata>

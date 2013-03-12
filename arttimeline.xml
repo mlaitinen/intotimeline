@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0" method="upgrade">
+	<name>Art Timeline</name>
+	<author>artetics.com</author>
+	<creationDate>June 2009</creationDate>
+	<copyright>Copyright (C) 2009 artetics.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>info@artetics.com</authorEmail>
+	<authorUrl>www.artetics.com</authorUrl>
+	<version>1.9.19</version>
+	<description><![CDATA[Art Timeline Joomla! component allows display highly-configurable time lines and their events.<br /><br />&copy;&nbsp;<a href="http://www.artetics.com">Artetics.com</a> - Start Point For Your Website.]]></description>
+	<installfile>install.arttimeline.php</installfile>
+	<uninstallfile>uninstall.arttimeline.php</uninstallfile> 
+    <install>
+      <sql>
+        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+      </sql>
+    </install>
+    <uninstall>
+      <sql>
+        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+      </sql>
+    </uninstall>
+	<files>
+		<filename>arttimeline.php</filename>
+		<filename>css/timeline.css</filename>
+		<filename>img/progress-running.gif</filename>
+		<filename>img/blue-circle.png</filename>
+		<filename>img/bubble-bottom.png</filename>
+		<filename>img/bubble-bottom-arrow.png</filename>
+		<filename>img/bubble-bottom-left.png</filename>
+		<filename>img/bubble-bottom-right.png</filename>
+		<filename>img/bubble-left.png</filename>
+		<filename>img/bubble-left-arrow.png</filename>
+		<filename>img/bubble-right.png</filename>
+		<filename>img/bubble-right-arrow.png</filename>
+		<filename>img/bubble-top.png</filename>
+		<filename>img/bubble-top-arrow.png</filename>
+		<filename>img/bubble-top-left.png</filename>
+		<filename>img/bubble-top-right.png</filename>
+		<filename>img/close-button.png</filename>
+		<filename>img/dark-blue-circle.png</filename>
+		<filename>img/dark-green-circle.png</filename>
+		<filename>img/dark-red-circle.png</filename>
+		<filename>img/dull-blue-circle.png</filename>
+		<filename>img/dull-green-circle.png</filename>
+		<filename>img/dull-red-circle.png</filename>
+		<filename>img/gray-circle.png</filename>
+		<filename>img/green-circle.png</filename>
+		<filename>img/message-bottom-left.png</filename>
+		<filename>img/message-left.png</filename>
+		<filename>img/message-top-left.png</filename>
+		<filename>img/message-bottom-right.png</filename>
+		<filename>img/message-right.png</filename>
+		<filename>img/message-top-right.png</filename>
+		<filename>img/red-circle.png</filename>
+		<filename>js/labellers.js</filename>
+		<filename>js/timeline.js</filename>
+		<filename>js/timeline-api.js</filename>
+		<filename>js/timeline-bundle.js</filename>
+		<filename>js/art_timeline.js</filename>
+		<filename>js/date.js</filename>
+    <folder>views</folder>
+	</files>
+  <languages folder="admin/language/en-GB">
+    <language tag="en-GB">en-GB.com_arttimeline.ini</language>
+  </languages>
+	<administration>
+		<menu task="timeline_list">Art_Timeline</menu>
+	    <submenu>
+	    	<menu task="timeline_list">Timelines</menu>
+	    	<menu task="band_list">Bands</menu>
+	    	<menu task="event_list">Events</menu>
+        <menu task="category_list">Categories</menu>
+        <menu task="settings">Settings</menu>
+        <menu task="help">Help</menu>
+	    </submenu>
+		<files folder="admin">
+			<filename>install.arttimeline.php</filename>
+			<filename>uninstall.arttimeline.php</filename>
+			<filename>admin.arttimeline.php</filename>
+			<filename>admin.arttimeline.html.php</filename>
+			<filename>controller.php</filename>
+			<filename>database/arttimeline.php</filename>
+			<filename>database/artband.php</filename>
+			<filename>database/artevent.php</filename>
+			<filename>database/artyear.php</filename>
+			<filename>database/artcategory.php</filename>
+			<filename>database/artsetting.php</filename>
+			<filename>images/artetics_logo.png</filename>
+			<filename>images/timeline_help_1.jpg</filename>
+			<filename>images/timeline_help_2.jpg</filename>
+			<filename>images/timeline_help_3.jpg</filename>
+			<filename>images/timeline_help_4.jpg</filename>
+			<filename>js/art_timeline.js</filename>
+			<filename>js/livevalidation.js</filename>
+			<filename>timelines/tmp.tmp</filename>
+			<filename>css/art_timeline.css</filename>
+			<filename>libraries/adodb/adodb-time.inc.php</filename>
+      <folder>sql</folder>
+      <folder>language</folder>
+		</files>
+    <languages>
+      <language tag="en-GB">admin/language/en-GB/en-GB.com_arttimeline.ini</language>
+    </languages>
+	</administration>
+</install>
