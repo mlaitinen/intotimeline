@@ -1,14 +1,14 @@
 <?php
 /**
-* @module		Art Timeline
-* @copyright	Copyright (C) 2010 artetics.com
-* @license		GPL
-*/ 
-
+ * @module		Into Timeline
+ * @copyright	Copyright (C) 2010 artetics.com
+ * @copyright	Copyright (C) 2013 Miku Laitinen
+ * @license	GPL
+ */
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class TableArtSetting extends JTable
+class TableSetting extends JTable
 {
 	var $id = null;
 	var $autogenerate = null;
@@ -25,7 +25,7 @@ class TableArtSetting extends JTable
 	
 	function __construct(&$db)
 	{
-		parent::__construct( '#__art_tl_setting', 'id', $db );
+		parent::__construct( '#__tl_setting', 'id', $db );
 	}
 }
 

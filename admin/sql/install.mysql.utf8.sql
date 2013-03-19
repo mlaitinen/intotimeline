@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__art_tl_timeline` (
+CREATE TABLE IF NOT EXISTS `#__tl_timeline` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) NOT NULL,
   `description` text,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `#__art_tl_timeline` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__art_tl_band` (
+CREATE TABLE IF NOT EXISTS `#__tl_band` (
   `id` int(11) NOT NULL auto_increment,
   `timeline_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `#__art_tl_band` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__art_tl_event` (
+CREATE TABLE IF NOT EXISTS `#__tl_event` (
   `id` int(11) NOT NULL auto_increment,
   `timeline_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `#__art_tl_event` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__art_tl_setting` (
+CREATE TABLE IF NOT EXISTS `#__tl_setting` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `autogenerate` tinyint(1) NOT NULL,
   `container_id` varchar(255) default NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `#__art_tl_setting` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__art_tl_category` (
+CREATE TABLE IF NOT EXISTS `#__tl_category` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `name` varchar(255) NOT NULL,
   `event_img` varchar(255),
@@ -77,12 +77,12 @@ CREATE TABLE IF NOT EXISTS `#__art_tl_category` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__art_tl_setting` (`id`, `autogenerate`, `container_id`, `container_style`, `title`, `display_description`, `customJS`, `not_published_text`, `not_generated_text`, `no_permissions_text`, `no_published_timelines_text`) 
-VALUES (1, 0, 'art_timeline_container', 'height: 170px; border: 1px solid #aaa', 'Art Timeline', 1, '', 'Timeline is not published or does not exist', 'Timeline file is not generated', 'You do not have permissions to access this page', 'There are no published timelines')
+INSERT INTO `#__tl_setting` (`id`, `autogenerate`, `container_id`, `container_style`, `title`, `display_description`, `customJS`, `not_published_text`, `not_generated_text`, `no_permissions_text`, `no_published_timelines_text`) 
+VALUES (1, 0, 'timeline_container', 'height: 170px; border: 1px solid #aaa', 'Into Timeline', 1, '', 'Timeline is not published or does not exist', 'Timeline file is not generated', 'You do not have permissions to access this page', 'There are no published timelines')
 ON DUPLICATE KEY UPDATE id=id;
 
-ALTER TABLE `#__art_tl_event`
+ALTER TABLE `#__tl_event`
 MODIFY COLUMN `start_date` varchar(255);
 
-ALTER TABLE `#__art_tl_event`
+ALTER TABLE `#__tl_event`
 MODIFY COLUMN `end_date` varchar(255);

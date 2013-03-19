@@ -1,10 +1,10 @@
 .footnotes {
-	background:#EEEEEE none repeat scroll 0 0;
-	padding:0.25em;
+    background:#EEEEEE none repeat scroll 0 0;
+    padding:0.25em;
 }
 .controls {
-	margin:1em 0;
-	padding:0.5em;
+    margin:1em 0;
+    padding:0.5em;
 }
 .timeline-ether-marker-bottom {
     width:          5em; 
@@ -124,7 +124,7 @@
     left: 0px;
     z-index: 1000;
     cursor: pointer;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .timeline-message-container {
@@ -179,18 +179,18 @@
     height:     100%;
 }
 
-.art_tl_timeline {
-	display: block;
+._tl_timeline {
+    display: block;
 }
 
-.art-timeline-logo {
-	font-weight:bold;
-	left:3px;
-	position:relative;
-	top:-17px;
-	z-index:1000;
+.into-timeline-logo {
+    font-weight:bold;
+    left:3px;
+    position:relative;
+    top:-17px;
+    z-index:1000;
 }
 
 .timeline-band-layer-inner div {
- z-index: 9999 !important;
+    z-index: 9999 !important;
 }

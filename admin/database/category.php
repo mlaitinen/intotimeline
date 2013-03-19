@@ -1,13 +1,14 @@
 <?php
 /**
-* @module		Art Timeline
-* @copyright	Copyright (C) 2010 artetics.com
-* @license		GPL
-*/ 
+ * @module		Into Timeline
+ * @copyright	Copyright (C) 2010 artetics.com
+ * @copyright	Copyright (C) 2013 Miku Laitinen
+ * @license	GPL
+ */
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class TableArtCategory extends JTable
+class TableCategory extends JTable
 {
 	var $id = null;
 	var $name = null;
@@ -20,7 +21,7 @@ class TableArtCategory extends JTable
 	
 	function __construct(&$db)
 	{
-		parent::__construct( '#__art_tl_category', 'id', $db );
+		parent::__construct( '#__tl_category', 'id', $db );
 		
 	}
 }

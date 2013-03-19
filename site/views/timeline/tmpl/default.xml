@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Into Timeline">
+        <message>
+			<![CDATA[Into Timeline]]>
+        </message>
+    </layout>
+    <state>
+        <name>Into Timeline</name>
+        <description>Into Timeline</description>
+        <url>
+        </url>
+        <params>
+            <param name="timeline" type="sql" default="" label="Timeline" description="Select timeline" query="SELECT name as timeline, id as value from #__tl_timeline WHERE published = 1"/>
+        </params>
+        <advanced>
+
+        </advanced>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="timeline" type="sql" default="" label="Timeline" description="Select timeline" query="SELECT name as timeline, id as value from #__tl_timeline WHERE published = 1"/>
+            </fieldset>
+        </fields>
+    </state>
+</metadata>

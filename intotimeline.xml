@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0" method="upgrade">
+    <name>Into Timeline</name>
+    <author>Miku Laitinen</author>
+    <creationDate>March 2013</creationDate>
+    <copyright>Copyright (C) 2009 artetics.com. Copyright (C) 2013 Miku Laitinen. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <authorEmail>miku.laitinen@ninjaware.fi</authorEmail>
+    <authorUrl>https://github.com/mlaitinen/intotimeline</authorUrl>
+    <version>1.9.19</version>
+    <description><![CDATA[Into Timeline Joomla! component allows display highly-configurable time lines and their events.]]>
+    </description>
+    <installfile>admin/install.intotimeline.php</installfile>
+    <uninstallfile>admin/uninstall.intotimeline.php</uninstallfile> 
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <files folder="site">
+        <filename>intotimeline.php</filename>
+        <folder>css</folder>
+        <folder>img</folder>
+        <folder>js</folder>
+        <folder>views</folder>
+    </files>
+    <languages folder="admin/language/en-GB">
+        <language tag="en-GB">en-GB.com_intotimeline.ini</language>
+    </languages>
+    <administration>
+        <menu task="timeline_list">Into_Timeline</menu>
+        <submenu>
+            <menu task="timeline_list">Timelines</menu>
+            <menu task="band_list">Bands</menu>
+            <menu task="event_list">Events</menu>
+            <menu task="category_list">Categories</menu>
+            <menu task="settings">Settings</menu>
+            <menu task="help">Help</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>admin.intotimeline.php</filename>
+            <filename>admin.intotimeline.html.php</filename>
+            <filename>controller.php</filename>
+            <folder>css</folder>
+            <folder>database</folder>
+            <folder>images</folder>
+            <folder>js</folder>
+            <folder>libraries</folder>
+            <folder>sql</folder>
+            <folder>language</folder>
+        </files>
+        <files>
+            <filename>install.intotimeline.php</filename>
+            <filename>uninstall.intotimeline.php</filename>
+        </files>
+        <languages>
+            <language tag="en-GB">admin/language/en-GB/en-GB.com_intotimeline.ini</language>
+        </languages>
+    </administration>
+</install>

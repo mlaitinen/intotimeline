@@ -1,40 +1,41 @@
 <?php
 /**
-* @module		Art Timeline
-* @copyright	Copyright (C) 2010 artetics.com
-* @license		GPL
-*/ 
+ * @module		Into Timeline
+ * @copyright	Copyright (C) 2010 artetics.com
+ * @copyright	Copyright (C) 2013 Miku Laitinen
+ * @license	GPL
+ */
 
 defined('_JEXEC') or die('Direct Access to this location is not allowed.');
 error_reporting(E_ERROR); 
-class HTML_ArtTimeline {
+class HTML_Timeline {
 	function help($option, &$rows) {
-		HTML_ArtTimeline::setHelpToolbar();
+		HTML_Timeline::setHelpToolbar();
 	?>
 		<ul>
-			<li><b>Art Timeline Component description</b><br />
-			Art Timeline component allows display highly-configurable timelines and their events. Timelines and events have several settings, can be created manually, generated from sql or from articles by category id and section id.
+			<li><b>Into Timeline Component description</b><br />
+			Into Timeline component allows display highly-configurable timelines and their events. Timelines and events have several settings, can be created manually, generated from sql or from articles by category id and section id.
 			<br /><br /><br /><br />
 			</li>
 			<li><b>Creating timelines</b><br />
-			Go to <b>Components -> Art Timeline -> Timelines</b> to manage timelines. Using this view administrator can publish/unpublish, create, edit, delete timelines, generate timeline files. If timeline is unpublished it cannot be viewed on front-end.
+			Go to <b>Components -> Into Timeline -> Timelines</b> to manage timelines. Using this view administrator can publish/unpublish, create, edit, delete timelines, generate timeline files. If timeline is unpublished it cannot be viewed on front-end.
 			<br /><br />
 			<u>Before timeline can be published on front-end it should have timeline file generated.</u> This can be done by clicking 'Generate Timelines' button.
-			<img src="components/com_arttimeline/images/timeline_help_1.jpg" />
+			<img src="components/com_intotimeline/images/timeline_help_1.jpg" />
 			<br /><br />
 			Using 'New' button administrator can create new timeline.
-			<img src="components/com_arttimeline/images/timeline_help_2.jpg" />
+			<img src="components/com_intotimeline/images/timeline_help_2.jpg" />
 			<br /><br /><br /><br />
 			Timelines and their events can also be created from articles using category and section id. This can be done on Settings page.
 			<br /><br /><br /><br />
 			</li>
 			<li><b>Creating events</b><br />
-			Once timeline is created administrator can add new events. Go to <b>Components -> Art Timeline -> Events</b> to manage events. Administrator can create, edit, remove events here. Each event should have title, start date and must be assigned to timeline. Description, end date, image and link are optional.
-			<img src="components/com_arttimeline/images/timeline_help_3.jpg" />
+			Once timeline is created administrator can add new events. Go to <b>Components -> Into Timeline -> Events</b> to manage events. Administrator can create, edit, remove events here. Each event should have title, start date and must be assigned to timeline. Description, end date, image and link are optional.
+			<img src="components/com_intotimeline/images/timeline_help_3.jpg" />
 			<br /><br /><br /><br />
 			</li>
 			<li><b>Settings</b><br />
-			Using <b>Components -> Art Timeline -> Settings</b> page administrator can manage common settings:
+			Using <b>Components -> Into Timeline -> Settings</b> page administrator can manage common settings:
 			<ul>
 				<li>Timeline container properties</li>
 				<li>Page title</li>
@@ -45,17 +46,17 @@ class HTML_ArtTimeline {
 				<li>Create timelines from CSV file</li>
 			</ul>
 			<br />
-			<img src="components/com_arttimeline/images/timeline_help_4.jpg" />
+			<img src="components/com_intotimeline/images/timeline_help_4.jpg" />
 			<br /><br /><br /><br />
 			</li>
 			<li><b>Displaying timeline on front-end</b><br />
-			To display list of timelines on front-end administrator should create menu item that points to Art Timeline component.<br /><br />
-			This url can be used to display list of available timelines: <b>index.php?option=com_arttimeline</b><br /><br />
-			This url can be used to display single timeline: <b>index.php?timelineid=ID&amp;option=com_arttimeline</b>, where ID is timeline id.
+			To display list of timelines on front-end administrator should create menu item that points to Into Timeline component.<br /><br />
+			This url can be used to display list of available timelines: <b>index.php?option=com_intotimeline</b><br /><br />
+			This url can be used to display single timeline: <b>index.php?timelineid=ID&amp;option=com_intotimeline</b>, where ID is timeline id.
 			<br /><br /><br /><br />
 			</li>
 			<li><b>Importing event from CSV file</b><br />
-			To import events from CSV administrator should go to Components -> Art Timeline -> Settings -> Create Timeline from CSV and indicate CSV file on server.<br /><br />
+			To import events from CSV administrator should go to Components -> Into Timeline -> Settings -> Create Timeline from CSV and indicate CSV file on server.<br /><br />
 			CSV file format should be the following:<br /><br />
 			title,description,start_date,end_date,image,link<br />
 			title2,description2,start_date2,end_date2,image2,link2<br />
@@ -63,12 +64,8 @@ class HTML_ArtTimeline {
 			...
 			<br /><br /><br /><br />
 			</li>
-			<li><b>Upgrading Art Timeline</b><br />
-			To upgrade Art Timeline extension to newer version, uninstall old and install new version of component using standard Joomla! procedures. Timeline-related data in database will remain untouched.
-			<br /><br /><br /><br />
-			</li>
-			<li><b>Contacts, questions and issues</b><br />
-			Please visit <a href="http://www.artetics.com" title="Artetics.com - Start Point For Your Website">www.artetics.com</a> for component demo, upgrades or if you have questions. There are other nice Joomla! extensions available.
+			<li><b>Upgrading Into Timeline</b><br />
+			To upgrade Into Timeline extension to newer version, uninstall old and install new version of component using standard Joomla! procedures. Timeline-related data in database will remain untouched.
 			<br /><br /><br /><br />
 			</li>
 		</ul>
@@ -76,8 +73,8 @@ class HTML_ArtTimeline {
 	}
 	
 	function settings($option, &$row) {
-		HTML_ArtTimeline::setSettingsToolbar();
-    HTML_ArtTimeline::includeResources();
+		HTML_Timeline::setSettingsToolbar();
+    HTML_Timeline::includeResources();
 		
 		?>
 		<form action="index.php" method="post" name="adminForm">
@@ -176,7 +173,7 @@ class HTML_ArtTimeline {
 	}
 	
 	function timeline_list($option, &$rows) {
-		HTML_ArtTimeline::setTimelinesListToolbar();
+		HTML_Timeline::setTimelinesListToolbar();
 		
 		?>
 		<form action="index.php" method="post" name="adminForm" id="adminForm">
@@ -254,7 +251,7 @@ class HTML_ArtTimeline {
 	}
 
 	function category_list($option, &$rows) {
-		HTML_ArtTimeline::setCategoryListToolbar();
+		HTML_Timeline::setCategoryListToolbar();
 		
 		?>
 		<form action="index.php" method="post" name="adminForm">
@@ -303,7 +300,7 @@ class HTML_ArtTimeline {
 	}
 	
 	function year_list($option, &$rows) {
-		HTML_ArtTimeline::setYearListToolbar();
+		HTML_Timeline::setYearListToolbar();
 		
 		?>
 		<form action="index.php" method="post" name="adminForm">
@@ -352,7 +349,7 @@ class HTML_ArtTimeline {
 	}
 
 	function event_list($option, &$rows, $order, $dir, $cid) {
-		HTML_ArtTimeline::setEventsListToolbar();
+		HTML_Timeline::setEventsListToolbar();
 		require_once(JPATH_COMPONENT.DS.'libraries'. DS . 'adodb' . DS . 'adodb-time.inc.php');
 		
     $titleSortLink = 'index.php?option=' . $option . '&task=event_list';
@@ -477,7 +474,7 @@ class HTML_ArtTimeline {
 	}
   
   function band_list($option, &$rows) {
-		HTML_ArtTimeline::setBandListToolbar();
+		HTML_Timeline::setBandListToolbar();
 		require_once(JPATH_COMPONENT.DS.'libraries'. DS . 'adodb' . DS . 'adodb-time.inc.php');
 		
 		?>
@@ -535,8 +532,8 @@ class HTML_ArtTimeline {
 	}
 
 	function timeline_edit($option, &$row) {
-		HTML_ArtTimeline::setTimelineToolbar($row->id);
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setTimelineToolbar($row->id);
+		HTML_Timeline::includeResources();		
 		JHTML::_('behavior.calendar');
 		$user =& JFactory::getUser();
 		
@@ -747,7 +744,7 @@ class HTML_ArtTimeline {
 						</td>
 					</tr>
 					<tr>
-						<td width="20%" class="key" title="Event Image. Either external image or located in JOOMLA_DIR folder by default. Example: blue-circle.png - this will display image JOOMLA_DIR/components/com_arttimeline/img/blue-circle.png ">
+						<td width="20%" class="key" title="Event Image. Either external image or located in JOOMLA_DIR folder by default. Example: blue-circle.png - this will display image JOOMLA_DIR/components/com_intotimeline/img/blue-circle.png ">
 							<label for="event_img">Event Image</label>
 						</td>
 						<td>
@@ -870,8 +867,8 @@ class HTML_ArtTimeline {
 	}
 	
 	function category_edit($option, &$row) {
-		HTML_ArtTimeline::setCategoryToolbar($row->id);
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setCategoryToolbar($row->id);
+		HTML_Timeline::includeResources();		
 		
 		?>
 		<form action="index.php" method="post" name="adminForm">
@@ -975,8 +972,8 @@ class HTML_ArtTimeline {
 	}
 	
 	function year_edit($option, &$row) {
-		HTML_ArtTimeline::setYearToolbar($row->id);
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setYearToolbar($row->id);
+		HTML_Timeline::includeResources();		
 		
 		?>
 		<form action="index.php" method="post" name="adminForm">
@@ -1011,14 +1008,14 @@ class HTML_ArtTimeline {
 	}
 	
 	function event_edit($option, &$row) {
-		HTML_ArtTimeline::setEventToolbar($row->id);
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setEventToolbar($row->id);
+		HTML_Timeline::includeResources();		
 		JHTML::_('behavior.calendar');
 		$user =& JFactory::getUser();
 		$db	=& JFactory::getDBO();
-		$db->setQuery("SELECT id, name from #__art_tl_timeline");
+		$db->setQuery("SELECT id, name from #__tl_timeline");
 		$timeline_rows = $db->loadObjectList();
-		$db->setQuery("SELECT id, name from #__art_tl_category");
+		$db->setQuery("SELECT id, name from #__tl_category");
 		$category_rows = $db->loadObjectList();
 		if (count($timeline_rows) > 0) {
 		?>
@@ -1211,11 +1208,11 @@ class HTML_ArtTimeline {
 	}
   
   function band_edit($option, &$row) {
-		HTML_ArtTimeline::setBandToolbar($row->id);
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setBandToolbar($row->id);
+		HTML_Timeline::includeResources();		
 		JHTML::_('behavior.calendar');
 		$db	=& JFactory::getDBO();
-		$db->setQuery("SELECT id, name from #__art_tl_timeline");
+		$db->setQuery("SELECT id, name from #__tl_timeline");
 		$timeline_rows = $db->loadObjectList();
 		if (count($timeline_rows) > 0) {
 		?>
@@ -1303,8 +1300,8 @@ class HTML_ArtTimeline {
 	}
 	
 	function timelinefromarticles_edit($option, &$row) {
-		HTML_ArtTimeline::setTimelineFromArticlesToolbar();
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setTimelineFromArticlesToolbar();
+		HTML_Timeline::includeResources();		
 		JHTML::_('behavior.calendar');
 		$user =& JFactory::getUser();
 		$db	=& JFactory::getDBO();
@@ -1325,7 +1322,7 @@ class HTML_ArtTimeline {
 						<td>
 							<input class="inputbox" type="text" name="name" id="name" size="40" maxlength="255" value="<?php echo $row->name; ?>" />
 							<?php
-								$db->setQuery("SELECT id, name from #__art_tl_timeline");
+								$db->setQuery("SELECT id, name from #__tl_timeline");
 								$timeline_rows = $db->loadObjectList();
 								if (count($timeline_rows) > 0) {
 							?>
@@ -1513,7 +1510,7 @@ class HTML_ArtTimeline {
 						</td>
 					</tr>
 					<tr>
-						<td width="20%" class="key" title="Event Image. Located in components/com_arttimeline/img folder">
+						<td width="20%" class="key" title="Event Image. Located in components/com_intotimeline/img folder">
 							<label for="event_img">Event Image</label>
 						</td>
 						<td>
@@ -1636,8 +1633,8 @@ class HTML_ArtTimeline {
 	}
   
   function timelinefromk2_edit($option, &$row) {
-		HTML_ArtTimeline::setTimelineFromk2Toolbar();
-		HTML_ArtTimeline::includeResources();
+		HTML_Timeline::setTimelineFromk2Toolbar();
+		HTML_Timeline::includeResources();
 		JHTML::_('behavior.calendar');
 		$user =& JFactory::getUser();
 		$db	=& JFactory::getDBO();
@@ -1812,7 +1809,7 @@ class HTML_ArtTimeline {
 						</td>
 					</tr>
 					<tr>
-						<td width="20%" class="key" title="Event Image. Located in components/com_arttimeline/img folder">
+						<td width="20%" class="key" title="Event Image. Located in components/com_intotimeline/img folder">
 							<label for="event_img">Event Image</label>
 						</td>
 						<td>
@@ -1935,8 +1932,8 @@ class HTML_ArtTimeline {
 	}
 	
 	function timelinefromcsv_edit($option, &$row) {
-		HTML_ArtTimeline::setTimelineFromCSVToolbar();
-		HTML_ArtTimeline::includeResources();		
+		HTML_Timeline::setTimelineFromCSVToolbar();
+		HTML_Timeline::includeResources();		
 		JHTML::_('behavior.calendar');
 		$user =& JFactory::getUser();
 		$db	=& JFactory::getDBO();
@@ -1961,7 +1958,7 @@ class HTML_ArtTimeline {
 						<td>
 							<input class="inputbox" type="text" name="name" id="name" size="40" maxlength="255" value="<?php echo $row->name; ?>" />
 							<?php
-								$db->setQuery("SELECT id, name from #__art_tl_timeline");
+								$db->setQuery("SELECT id, name from #__tl_timeline");
 								$timeline_rows = $db->loadObjectList();
 								if (count($timeline_rows) > 0) {
 							?>
@@ -2117,7 +2114,7 @@ class HTML_ArtTimeline {
 						</td>
 					</tr>
 					<tr>
-						<td width="20%" class="key" title="Event Image. Located in components/com_arttimeline/img folder">
+						<td width="20%" class="key" title="Event Image. Located in components/com_intotimeline/img folder">
 							<label for="event_img">Event Image</label>
 						</td>
 						<td>
@@ -2240,8 +2237,8 @@ class HTML_ArtTimeline {
 	}
 	
 	function timelinefromsql_edit($option, &$row) {
-		HTML_ArtTimeline::setTimelineFromSQLToolbar();
-		HTML_ArtTimeline::includeResources();
+		HTML_Timeline::setTimelineFromSQLToolbar();
+		HTML_Timeline::includeResources();
 		JHTML::_('behavior.calendar');
 		$user =& JFactory::getUser();
 		$db	=& JFactory::getDBO();
@@ -2258,7 +2255,7 @@ class HTML_ArtTimeline {
 						<td>
 							<input class="inputbox" type="text" name="name" id="name" size="40" maxlength="255" value="<?php echo $row->name; ?>" />
 							<?php
-								$db->setQuery("SELECT id, name from #__art_tl_timeline");
+								$db->setQuery("SELECT id, name from #__tl_timeline");
 								$timeline_rows = $db->loadObjectList();
 								if (count($timeline_rows) > 0) {
 							?>
@@ -2421,7 +2418,7 @@ class HTML_ArtTimeline {
 						</td>
 					</tr>
 					<tr>
-						<td width="20%" class="key" title="Event Image. Located in components/com_arttimeline/img folder">
+						<td width="20%" class="key" title="Event Image. Located in components/com_intotimeline/img folder">
 							<label for="event_img">Event Image</label>
 						</td>
 						<td>
@@ -2654,7 +2651,7 @@ class HTML_ArtTimeline {
 	function setEventsListToolbar() {
 		JToolBarHelper::title('Events', 'categories.png');
 		$db	=& JFactory::getDBO();
-		$db->setQuery("SELECT id, name from #__art_tl_timeline");
+		$db->setQuery("SELECT id, name from #__tl_timeline");
 		$timeline_rows = $db->loadObjectList();
 		if (count($timeline_rows) > 0) {
 			JToolBarHelper::custom('event_edit', 'new.png', 'default.png', 'New', false);
@@ -2666,7 +2663,7 @@ class HTML_ArtTimeline {
   function setBandListToolbar() {
 		JToolBarHelper::title('Bands', 'categories.png');
 		$db	=& JFactory::getDBO();
-		$db->setQuery("SELECT id, name from #__art_tl_timeline");
+		$db->setQuery("SELECT id, name from #__tl_timeline");
 		$timeline_rows = $db->loadObjectList();
 		if (count($timeline_rows) > 0) {
 			JToolBarHelper::custom('band_edit', 'new.png', 'default.png', 'New', false);
@@ -2684,7 +2681,7 @@ class HTML_ArtTimeline {
 		JToolBarHelper::custom('timelinefromarticles_edit', 'html.png', 'default.png', 'Create Timeline from Articles', false);
 		JToolBarHelper::custom('timelinefromsql_edit', 'move.png', 'default.png', 'Create Timeline from SQL', false);
 		JToolBarHelper::custom('timelinefromcsv_edit', 'move.png', 'default.png', 'Create Timeline from CSV', false);
-    if (HTML_ArtTimeline::isK2installed()) {
+    if (HTML_Timeline::isK2installed()) {
       JToolBarHelper::custom('timelinefromk2_edit', 'move.png', 'default.png', 'Create Timeline from K2', false);
     }
 		JToolBarHelper::custom('settings_save', 'save.png', 'default.png', 'Save', false);
@@ -2693,7 +2690,7 @@ class HTML_ArtTimeline {
 	
 	function includeResources() {
 		$document = &JFactory::getDocument();
-		$componentPath = 'administrator/components/com_arttimeline/';
+		$componentPath = 'administrator/components/com_intotimeline/';
 		$document->addScript( JURI::root() . $componentPath . '/js/livevalidation.js' ); 
 		$document->addScript( JURI::root() . $componentPath . '/js/art_timeline.js' ); 
 		$document->addStyleSheet( JURI::root() . $componentPath . '/css/art_timeline.css' ); 
