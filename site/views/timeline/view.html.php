@@ -98,6 +98,9 @@ class IntotimelineViewTimeline extends JView {
             }
         }
 
+        unset($settings->_db);
+        unset($timeline->_db);
+        
         $this->assignRef('settings', $settings);
         $this->assignRef('componentPath', $componentPath);
         $this->assignRef('timeline', $timeline);
