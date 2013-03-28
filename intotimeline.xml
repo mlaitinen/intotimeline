@@ -24,10 +24,12 @@
     </uninstall>
     <files folder="site">
         <filename>intotimeline.php</filename>
+        <filename>controller.php</filename>
         <folder>css</folder>
         <folder>img</folder>
         <folder>js</folder>
         <folder>views</folder>
+	<folder>models</folder>
     </files>
     <languages folder="admin/language/en-GB">
         <language tag="en-GB">en-GB.com_intotimeline.ini</language>
