@@ -39,17 +39,16 @@ var tl;
  *  - brows (array of objects [id, interval_unit_name, interval_pixel])
  */
 function intoOnLoad() {
-    var jee = Timeline.GregorianDateLabeller.monthNames;
+    
+    // Change the date format in bubble.
+    // TODO: Make the date format configurable.
+    Timeline.GregorianDateLabeller.prototype.labelPrecise = function(date) {
+        date = SimileAjax.DateTime.removeTimeZoneOffset(date, this._timeZone);
+        return date.toLocaleDateString(); // + ' ' + date.toLocaleTimeString();
+    };
+    
     Timeline.componentPath = componentPath;
     var eventSource = new Timeline.DefaultEventSource(0);
-
-    if(timeline.scroll_start_date) {
-        var startProj = Timeline.DateTime.parseIso8601DateTime(timeline.scroll_start_date);
-    }
-
-    if(timeline.scroll_end_date) {
-        var endProj = Timeline.DateTime.parseIso8601DateTime(timeline.scroll_end_date);
-    }
 
     eval('var theme = Timeline.' + timeline.theme + '.create();');
     theme.event.bubble.width = timeline.bubble_width;
@@ -109,12 +108,12 @@ function intoOnLoad() {
     eval('var direction = Timeline.' + timeline.direction + ';');
     tl = Timeline.create(document.getElementById(settings.container_id), bandInfos, direction);
 
-    if (timeline.scroll_start_date !== 0) {
-        tl.timeline_start = startProj;
+    if (timeline.scroll_start_date) {
+        tl.timeline_start = Timeline.DateTime.parseIso8601DateTime(timeline.scroll_start_date);;
     }
 
-    if (timeline.scroll_end_date !== 0) {
-        tl.timeline_stop = endProj;
+    if (timeline.scroll_end_date) {
+        tl.timeline_stop = Timeline.DateTime.parseIso8601DateTime(timeline.scroll_end_date);
     }
 
     tl.loadJSON('index.php?option=com_intotimeline&format=raw&task=jsontimeline&id=' + timeline.id, function(json, url) {

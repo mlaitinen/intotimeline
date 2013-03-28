@@ -41,10 +41,13 @@ class IntotimelineViewTimeline extends JView {
         
         $document->_links[] = "<script type=\"text/javascript\"> //";
         $document->_links[] = "Timeline_ajax_url=\"" . JURI::base() . $jsPath . "timeline_ajax/simile-ajax-api.js\"; //";
+        $document->_links[] = "SimileAjax_urlPrefix=\"" . JURI::base() . $jsPath . "timeline_ajax/\"; //";
         $document->_links[] = "Timeline_urlPrefix=\"" . JURI::base() . $jsPath . "timeline_js/\"; // ";
         $document->_links[] = "Timeline_parameters='bundle=true&forceLocale=fi&defaultLocale=fi'; //";
-        $document->_links[] = "</script>";
+        $document->_links[] = "</script> <span";
 
+        $document->addScript($jsPath . 'timeline_ajax/simile-ajax-api.js');
+        $document->addScript($jsPath . 'timeline_ajax/simile-ajax-bundle.js');
         $document->addScript($timelinePath . 'timeline-api.js');
         $document->addScript($jsPath . 'date.js'); // TODO: Is this needed?
         $document->addScript($jsPath . 'into_timeline.js');
