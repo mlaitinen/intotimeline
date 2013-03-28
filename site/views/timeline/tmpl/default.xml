@@ -8,17 +8,18 @@
     <state>
         <name>Into Timeline</name>
         <description>Into Timeline</description>
+        
+        <advanced></advanced>
+        
+        <!-- Joomla 1.5.x -->
         <url>
+            <param name="id" type="sql" default="" label="Timeline" description="Select timeline" key_field="id" value_field="name" query="SELECT id, name from #__tl_timeline WHERE published = 1"/>
         </url>
-        <params>
-            <param name="timeline" type="sql" default="" label="Timeline" description="Select timeline" query="SELECT name as timeline, id as value from #__tl_timeline WHERE published = 1"/>
-        </params>
-        <advanced>
-
-        </advanced>
-        <fields name="params">
-            <fieldset name="basic">
-                <field name="timeline" type="sql" default="" label="Timeline" description="Select timeline" query="SELECT name as timeline, id as value from #__tl_timeline WHERE published = 1"/>
+        
+        <!-- Joomla >1.5.x -->
+        <fields name="request">
+            <fieldset name="request">
+                <field name="id" type="sql" default="" label="Timeline" description="Select timeline" key_field="id" value_field="name" query="SELECT id, name from #__tl_timeline WHERE published = 1" />
             </fieldset>
         </fields>
     </state>
