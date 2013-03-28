@@ -16,6 +16,6 @@ $task = JRequest::getCmd('task');
 $controller->registerDefaultTask('timeline_list');
 $controller->execute($task);
 $controller->redirect();
-TimelineController::addSubmenu();
+$controller->addSubmenu();
 
 ?>

@@ -17,10 +17,6 @@ class TableSetting extends JTable
 	var $title = null;
 	var $display_description = null;
 	var $customJS = null;
-	var $not_published_text = null;
-	var $not_generated_text = null;
-	var $no_permissions_text = null;
-	var $no_published_timelines_text = null;
 	var $bubbletype = null;
 	
 	function __construct(&$db)

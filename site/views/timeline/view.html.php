@@ -58,33 +58,10 @@ class IntotimelineViewTimeline extends JView {
         $user = & JFactory::getUser();
 
         if (!$timeline->published) {
-            echo $settings->not_published_text;
-        } else if (!$timeline->file && !$timeline->query) {
-            echo $settings->not_generated_text;
+            echo JText::_('Timeline is not published or does not exist');
         } else if ($timeline->access > $user->get('aid', 0)) {
-            echo $settings->no_permissions_text;
+            echo JText::_('You do not have permissions to access this page');
         } else {
-            // TODO: Create a table class and set default values there?
-            if (!$timeline->bubble_width)
-                $timeline->bubble_width = 320;
-            if (!$timeline->bubble_height)
-                $timeline->bubble_height = 120;
-            if (!$timeline->event_img)
-                $timeline->event_img = 'dull-blue-circle.png';
-            if (!$timeline->event_line_color)
-                $timeline->event_line_color = '#58A0DC';
-            if (!$timeline->event_imprecise_color)
-                $timeline->event_imprecise_color = '#58A0DC';
-            if (!$timeline->event_imprecise_opacity)
-                $timeline->event_imprecise_opacity = 20;
-            if (!$timeline->event_duration_color)
-                $timeline->event_duration_color = '#58A0DC';
-            if (!$timeline->event_duration_opacity)
-                $timeline->event_duration_opacity = 100;
-            if (!$timeline->event_duration_imprecise_color)
-                $timeline->event_duration_imprecise_color = '#58A0DC';
-            if (!$timeline->event_duration_imprecise_opacity)
-                $timeline->event_duration_imprecise_opacity = 100;
             
             $interval_unit = $this->intervalUnits[$timeline->interval_unit];
 

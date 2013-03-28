@@ -835,18 +835,19 @@ class TimelineController extends JController {
     }
 
     function addSubmenu() {
+        $task = $this->getTask();
         JSubMenuHelper::addEntry(
-                'Timelines', 'index.php?option=com_intotimeline&task=timeline_list');
+                JText::_('Timelines'), 'index.php?option=com_intotimeline&task=timeline_list', $task == 'timeline_list' || $task == null);
         JSubMenuHelper::addEntry(
-                'Bands', 'index.php?option=com_intotimeline&task=band_list');
+                JText::_('Bands'), 'index.php?option=com_intotimeline&task=band_list', $task == 'band_list');
         JSubMenuHelper::addEntry(
-                'Events', 'index.php?option=com_intotimeline&task=event_list');
+                JText::_('Events'), 'index.php?option=com_intotimeline&task=event_list', $task == 'event_list');
         JSubMenuHelper::addEntry(
-                'Categories', 'index.php?option=com_intotimeline&task=category_list');
+                JText::_('Categories'), 'index.php?option=com_intotimeline&task=category_list', $task == 'category_list');
         JSubMenuHelper::addEntry(
-                'Settings', 'index.php?option=com_intotimeline&task=settings');
+                JText::_('Settings'), 'index.php?option=com_intotimeline&task=settings', $task == 'settings');
         JSubMenuHelper::addEntry(
-                'Help', 'index.php?option=com_intotimeline&task=help');
+                JText::_('Help'), 'index.php?option=com_intotimeline&task=help', $task == 'help');
     }
 
 }

@@ -31,18 +31,21 @@
         <folder>views</folder>
 	<folder>models</folder>
     </files>
-    <languages folder="admin/language/en-GB">
-        <language tag="en-GB">en-GB.com_intotimeline.ini</language>
+    <languages folder="admin/language">
+        <language tag="en-GB">en-GB/en-GB.com_intotimeline.ini</language>
+	<language tag="en-GB">en-GB/en-GB.com_intosuggest.menu.ini</language>
+	<language tag="fi-FI">fi-FI/fi-FI.com_intosuggest.ini</language>
+	<language tag="fi-FI">fi-FI/fi-FI.com_intosuggest.menu.ini</language>
     </languages>
     <administration>
-        <menu task="timeline_list">Into_Timeline</menu>
+        <menu task="timeline_list">INTO_TIMELINE</menu>
         <submenu>
-            <menu task="timeline_list">Timelines</menu>
-            <menu task="band_list">Bands</menu>
-            <menu task="event_list">Events</menu>
-            <menu task="category_list">Categories</menu>
-            <menu task="settings">Settings</menu>
-            <menu task="help">Help</menu>
+            <menu task="timeline_list">TIMELINES</menu>
+            <menu task="band_list">BANDS</menu>
+            <menu task="event_list">EVENTS</menu>
+            <menu task="category_list">CATEGORIES</menu>
+            <menu task="settings">SETTINGS</menu>
+            <menu task="help">HELP</menu>
         </submenu>
         <files folder="admin">
             <filename>admin.intotimeline.php</filename>

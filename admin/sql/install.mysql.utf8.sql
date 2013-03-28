@@ -59,10 +59,6 @@ CREATE TABLE IF NOT EXISTS `#__tl_setting` (
   `title` varchar(255),
   `display_description` tinyint(1),
   `customJS` text,
-  `not_published_text` text,
-  `not_generated_text` text,
-  `no_permissions_text` text,
-  `no_published_timelines_text` text,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -77,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `#__tl_category` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__tl_setting` (`id`, `autogenerate`, `container_id`, `container_style`, `title`, `display_description`, `customJS`, `not_published_text`, `not_generated_text`, `no_permissions_text`, `no_published_timelines_text`) 
-VALUES (1, 0, 'timeline_container', 'height: 170px; border: 1px solid #aaa', 'Into Timeline', 1, '', 'Timeline is not published or does not exist', 'Timeline file is not generated', 'You do not have permissions to access this page', 'There are no published timelines')
+INSERT INTO `#__tl_setting` (`id`, `autogenerate`, `container_id`, `container_style`, `title`, `display_description`, `customJS`) 
+VALUES (1, 0, 'timeline_container', 'height: 250px; border: 1px solid #aaa', 'Timeline', 1, '')
 ON DUPLICATE KEY UPDATE id=id;
 
 ALTER TABLE `#__tl_event`
