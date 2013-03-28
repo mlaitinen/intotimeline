@@ -20,13 +20,18 @@ function into_timeline_init() {
     intoOnResize();
 }
 
-if(document.body){
-    if(document.all){
-        document.body.onload = into_timeline_init;
+var initialized = false;
+window.onload = into_timeline_init;
+/*if(window.document.body !== null) {
+    if(window.document.all){
+        window.document.body.onload = into_timeline_init;
     } else {
-        document.body.setAttribute("onload","into_timeline_init()");
+        window.document.body.setAttribute("onload","into_timeline_init()");
     }
-}
+} else {
+    // IE crap fix
+    window.document.onload = into_timeline_init;
+}*/
 
 var tl;
 
@@ -83,7 +88,7 @@ function intoOnLoad() {
     };
     
     if(brows.length > 0) {
-        bandSettings.width = '70%';
+        bandSettings.width = '80%';
     }
     
     var bandInfos = [Timeline.createBandInfo(bandSettings)];
@@ -92,12 +97,14 @@ function intoOnLoad() {
     for(var i = 0; i < brows.length; i++) {
         var brow = brows[i];
         
-        var width = (30 / brows.length) + '%';
+        var width = (20 / brows.length) + '%';
         eval('var browIntervalUnit = Timeline.DateTime.' + brow.interval_unit_name + ';');
         var bandInfo = Timeline.createBandInfo({
-            width: width,
-            intervalUnit: browIntervalUnit,
-            intervalPixels: brow.interval_pixel
+            width:          width,
+            intervalUnit:   browIntervalUnit,
+            intervalPixels: brow.interval_pixel,
+            eventSource:    eventSource,
+            overview:       true
         });
         
         bandInfos.push(bandInfo);
