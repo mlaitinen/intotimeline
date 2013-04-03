@@ -96,7 +96,7 @@ class IntotimelineModelTimeline extends JModel {
             $data = substr($data, 0, -1);
         }
 
-        $data = "{'dateTimeFormat': '" . $dateTimeFormat . "', 'wikiURL': '', 'wikiSection': '', 'events': [" . $data . "]}";
+        $data = "{'dateTimeFormat': '" . $dateTimeFormat . "', 'events': [" . $data . "]}";
 
         return $data;
     }
