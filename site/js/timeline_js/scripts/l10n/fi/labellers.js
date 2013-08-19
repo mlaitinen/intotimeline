@@ -10,3 +10,7 @@ Timeline.GregorianDateLabeller.monthNames["fi"] = [
 Timeline.GregorianDateLabeller.dayNames["fi"] = [
     "Sunnuntai", "Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai"
 ];
+
+Timeline.GregorianDateLabeller.intervalNames["fi"] = [
+    "Millisekunti", "Sekunti", "Minuutti", "Tunti", "Päivä", "Viikko", "Kuukausi", "Vuosi"
+]

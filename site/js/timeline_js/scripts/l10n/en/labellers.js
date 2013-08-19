@@ -10,3 +10,7 @@ Timeline.GregorianDateLabeller.monthNames["en"] = [
 Timeline.GregorianDateLabeller.dayNames["en"] = [
     "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 ];
+
+Timeline.GregorianDateLabeller.intervalNames["en"] = [
+    "Millisecond", "Second", "Minute", "Hour", "Day", "Week", "Month", "Year"
+]
